@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.onairplugin binary
+*.dylib binary
+# Preserve the upstream subset's existing trailing blank lines.
+vendor/onair/** whitespace=-blank-at-eof

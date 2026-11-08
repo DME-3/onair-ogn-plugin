@@ -1,0 +1,32 @@
+OGN M-band Decoder 0.1.0
+Copyright (C) 2026 OGN plugin contributors
+Written with assistance from OpenAI Codex.
+New plugin, decoder, tests and build code: GPL-3.0-or-later.
+
+Bundled OnAir Mode Builder receiver and supporting stages:
+Copyright (C) 2026 Kristijonas Adomaitis and OnAir contributors.
+GPL-3.0-or-later. See LICENSE.
+Source: https://github.com/adswill/OnAir
+Base: 25034214fa91adcdfd7ec843c51f9d79285472d8
+Files: vendor/onair/include and vendor/onair/src.
+The rx.cpp acquisition guard includes the local contribution submitted as:
+https://github.com/adswill/OnAir/pull/461
+No other OnAir application internals or dynamic symbols are required.
+
+OnAir public SDK header: CC0-1.0, as stated in sdk/onair_plugin.h.
+See licenses/CC0-1.0.txt. Plugin interface version 1.
+
+OGN protocol references:
+https://wiki.glidernet.org/ogn-tracking-protocol
+https://github.com/glidernet/ogn-tracker/tree/f14ff85796903e890ac3d3dfc0e7b46c831c4d7c
+https://github.com/pjalocha/esp32-ogn-tracker/tree/42e0e366d05bfc866ec5e3d0fba8058f9da3a3dc
+
+src/ogn1_checks.inc contains the numeric parity-check constants identifying
+the public OGN1 air-interface code, transcribed from glidernet/ogn-tracker's
+ldpc.h at the revision above. The LDPC encoder/decoder, TEA implementation
+and explicit field parser are independently written here; no tracker
+implementation source is bundled. The reference codeword used in the tests
+is the public example published on the OGNTP wiki, not a captured packet.
+
+No recordings, private decoded reports, identifying capture content or
+private test artifacts are included in this source or installable package.

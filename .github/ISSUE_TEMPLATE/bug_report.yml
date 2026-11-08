@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a decoder, reception, installation or packaging problem
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep recordings and decoded real-world content private. Do not attach aircraft/device identifiers, positions, registrations, credentials or personal paths. Prefer a synthetic reproduction.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions and platform
+      description: Plugin version, OnAir version, macOS version, Apple silicon or Intel
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include mode, sample format/rate and relative signal offset when relevant. Use synthetic signals; omit identifying capture details.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Sanitized diagnostics
+      description: Counters, error text or test results only after reviewing them for private content.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy review
+      options:
+        - label: I have excluded recordings and private decoded data from this report.
+          required: true

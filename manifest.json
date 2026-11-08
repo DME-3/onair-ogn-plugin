@@ -1,0 +1,102 @@
+{
+  "id": "ogn-mband",
+  "name": "OGN M-band Decoder",
+  "version": "0.1.0",
+  "author": "OGN plugin contributors",
+  "license": "GPL-3.0-or-later",
+  "description": "Local OGN1 M1/M2 reception, LDPC correction, TEA dewhitening and position/status/info/wind decoding. No network or automatic file output.",
+  "kind": "mode",
+  "abi_version": 1,
+  "minimum_onair": "3.5.0",
+  "library": {
+    "macos": "ogn-mband.dylib"
+  },
+  "permissions": [],
+  "modes": [
+    {
+      "id": "both",
+      "name": "OGN M1 + M2",
+      "group": "Plugins",
+      "default_frequency_hz": 868300000,
+      "bandwidth_hz": 600000,
+      "sample_rates": [
+        1250000,
+        2000000
+      ]
+    },
+    {
+      "id": "m1",
+      "name": "OGN M1",
+      "group": "Plugins",
+      "default_frequency_hz": 868200000,
+      "bandwidth_hz": 300000,
+      "sample_rates": [
+        1250000,
+        2000000
+      ]
+    },
+    {
+      "id": "m2",
+      "name": "OGN M2",
+      "group": "Plugins",
+      "default_frequency_hz": 868400000,
+      "bandwidth_hz": 300000,
+      "sample_rates": [
+        1250000,
+        2000000
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "key": "recording_center_mhz",
+      "label": "Recording centre MHz (blank = tuned centre)",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "key": "frequency_trim_hz",
+      "label": "Channel frequency correction (Hz)",
+      "type": "slider",
+      "min": -15000,
+      "max": 15000,
+      "default": 0
+    },
+    {
+      "key": "squelch_db",
+      "label": "Burst threshold (dB above noise)",
+      "type": "slider",
+      "min": 3,
+      "max": 15,
+      "default": 6
+    },
+    {
+      "key": "max_corrected_bits",
+      "label": "Maximum LDPC bit corrections",
+      "type": "slider",
+      "min": 0,
+      "max": 6,
+      "default": 2
+    },
+    {
+      "key": "sync_errors",
+      "label": "Allowed sync bit errors (LDPC always checked)",
+      "type": "slider",
+      "min": 0,
+      "max": 2,
+      "default": 0
+    },
+    {
+      "key": "emit_events",
+      "label": "Emit local OnAir automation events",
+      "type": "checkbox",
+      "default": false
+    },
+    {
+      "key": "show_field_table",
+      "label": "Show every decoded field",
+      "type": "checkbox",
+      "default": false
+    }
+  ]
+}

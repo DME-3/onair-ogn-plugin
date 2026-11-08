@@ -1,0 +1,41 @@
+# Build products and generated synthetic IQ
+/build*/
+/dist/
+/out/
+/cmake-build-*/
+CMakeUserPresets.json
+*.dylib
+*.so
+*.a
+*.o
+*.onairplugin
+
+# Recordings and decoded output belong outside this repository.
+*.[cC]16
+*.ci16
+*.cs8
+*.cf32
+*.cu8
+*.iq
+*.raw
+*.wav
+*.sigmf-data
+*.sigmf-meta
+*.jsonl
+/captures/
+/recordings/
+/private*/
+/results/
+
+# Machine settings and credentials
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+*.pem
+*.key
+.idea/
+.vscode/
+*.swp
+*~

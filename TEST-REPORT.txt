@@ -1,0 +1,24 @@
+OGN M-band Decoder 0.1.0 — public test coverage
+
+The public protocol and synthetic-IQ tests have passed locally in Release
+and with UndefinedBehaviorSanitizer configured to halt on errors.
+
+- 443 protocol/IQ assertions: published OGN reference codeword, independent
+  TEA plaintext, parity encoding, all single-bit locations, deterministic
+  two-bit cases, ambiguous-syndrome rejection, scaling boundaries, signed
+  coordinates, unavailable values and standard report dispatch.
+- Eight CTest cases: protocol/IQ, actual plugin loading through ABI 1,
+  synthetic fixture generation, combined-channel IQ, M1, M2 with explicit
+  recording-centre override and nullable-field interpretation by the host.
+- Universal arm64/x86_64 library: both slices compiled and inspected.
+  Runtime tests were executed on Apple silicon only.
+- Local ad-hoc signature verified. This is not an Apple-notarized build.
+
+The SDK replay host loads the actual plugin library and reproduces OnAir's
+column-schema coercion. Full installation, enabling and live reception in
+OnAir's native GUI remain to be verified. Intel runtime is not yet tested.
+A successful AddressSanitizer run is not claimed.
+
+All shared tests use public reference material or synthetic signals.
+No real-world recordings, decoded results or private validation reports
+are included. See docs/TESTING.md for reproducible commands and CI coverage.

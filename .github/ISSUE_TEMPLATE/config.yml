@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security and privacy reporting
+    url: https://github.com/DME-3/onair-ogn-plugin/blob/main/SECURITY.md
+    about: Read the private-reporting guidance before disclosing sensitive details.
